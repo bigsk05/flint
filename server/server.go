@@ -9,11 +9,6 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
-	"github.com/volantvm/flint/pkg/imagerepository"
-	"github.com/volantvm/flint/pkg/libvirtclient"
-	"github.com/volantvm/flint/pkg/logger"
-	"github.com/go-chi/chi/v5"
-	"golang.org/x/crypto/bcrypt"
 	"io"
 	"net/http"
 	"os"
@@ -23,6 +18,12 @@ import (
 	"sync"
 	"syscall"
 	"time"
+
+	"github.com/go-chi/chi/v5"
+	"github.com/volantvm/flint/pkg/imagerepository"
+	"github.com/volantvm/flint/pkg/libvirtclient"
+	"github.com/volantvm/flint/pkg/logger"
+	"golang.org/x/crypto/bcrypt"
 )
 
 type Server struct {
@@ -279,6 +280,7 @@ func (s *Server) showLoginForm(w http.ResponseWriter, invalid bool) {
 <html>
 <head>
     <title>Flint - Login</title>
+	<meta charset="UTF-8">
     <style>
         body { font-family: Arial, sans-serif; margin: 50px; background: #f5f5f5; }
         .login { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 400px; margin: 0 auto; }
